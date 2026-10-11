@@ -1,0 +1,14 @@
+{
+  "title": "What is Docker?",
+  "series": "EP.03 / DEVOPS",
+  "scenes": [
+    { "type": "hook", "say": "It works on my machine. The most famous excuse in software.", "kicker": "every developer, ever", "title": "It works on my machine", "highlight": "machine", "icon": "docker" },
+    { "type": "compare", "say": "Your laptop has one setup. The server has another, so the app breaks.", "left": { "title": "Your laptop", "icon": "laptop", "points": ["Python 3.12", "Library v2", "macOS"] }, "right": { "title": "The server", "icon": "server", "points": ["Python 3.8", "Library v1", "Linux"] }, "cue": "server" },
+    { "type": "code", "say": "Docker fixes this. You describe your app's world in one small file.", "file": "Dockerfile", "lines": ["FROM python:3.12-slim", "WORKDIR /app", "COPY . .", "RUN pip install -r req.txt", "CMD [\"python\", \"app.py\"]"], "cue": "describe" },
+    { "type": "flow", "say": "Docker builds it into an image, then runs that image as a container, the same everywhere.", "nodes": [ { "icon": "file", "name": "Dockerfile", "desc": "the recipe", "cue": "builds" }, { "icon": "layers", "name": "Image", "desc": "frozen snapshot", "cue": "image" }, { "icon": "container", "name": "Container", "desc": "running app", "cue": "container" }, { "icon": "globe", "name": "Anywhere", "desc": "laptop, cloud, CI", "cue": "everywhere" } ], "reply": false },
+    { "type": "scale", "say": "Need more power? Start ten copies in seconds, then shut them down.", "label": "requests per second", "icon": "container", "from": 1, "to": 10, "unit": "containers", "cue": "ten", "back": "shut" },
+    { "type": "orbit", "say": "Every major cloud runs it: AWS, Google Cloud, Azure, and Kubernetes.", "center": { "icon": "docker", "name": "Docker" }, "items": [ { "icon": "aws ecs", "name": "AWS", "cue": "AWS" }, { "icon": "google cloud", "name": "Google", "cue": "Google" }, { "icon": "azure", "name": "Azure", "cue": "Azure" }, { "icon": "kubernetes", "name": "Kubernetes", "cue": "Kubernetes" } ] },
+    { "type": "stat", "say": "Docker Hub serves billions of image downloads every month.", "value": "13", "suffix": "B+", "label": "image pulls per month on Docker Hub", "icon": "docker", "cue": "billions" },
+    { "type": "outro", "say": "That's Docker. Ship the whole machine, not just the code.", "title": "Ship the whole machine", "highlight": "machine", "sub": "that's Docker", "next": "NEXT: what is Kubernetes?", "visual": "particles", "icon": "docker" }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "title": "AWS vs Azure",
+  "series": "EP.05 / CLOUD",
+  "scenes": [
+    { "type": "hook", "say": "AWS or Azure? Learn the wrong one and you waste months.", "kicker": "the cloud question", "title": "AWS or Azure?", "highlight": "Azure?", "icon": "cloud" },
+    { "type": "cards", "say": "AWS is Amazon's cloud, the first and the biggest. Azure is Microsoft's cloud, built into big companies.", "items": [
+      { "icon": "aws", "kicker": "since 2006", "name": "AWS", "desc": "Amazon's cloud", "cue": "AWS" },
+      { "icon": "azure", "kicker": "since 2010", "name": "Azure", "desc": "Microsoft's cloud", "cue": "Azure" } ] },
+    { "type": "stat", "say": "AWS still leads, with about 30 percent of the cloud market. Azure is close behind at about 20.", "value": "30", "suffix": "%", "label": "AWS share of the cloud market", "icon": "aws", "cue": "30" },
+    { "type": "compare", "mode": "neutral", "say": "The services are twins with different names. EC2 is Virtual Machines. S3 is Blob Storage. Lambda is Functions.", "left": { "title": "AWS", "icon": "aws", "points": ["EC2", "S3", "Lambda"] }, "right": { "title": "Azure", "icon": "azure", "points": ["Virtual Machines", "Blob Storage", "Functions"] }, "cue": "Virtual" },
+    { "type": "orbit", "say": "Azure wins where Microsoft already lives: Office, Entra ID logins, Windows servers, and OpenAI models.", "center": { "icon": "azure", "name": "Azure" }, "items": [
+      { "icon": "file-text", "name": "Office 365", "cue": "Office" },
+      { "icon": "key-round", "name": "Entra ID", "cue": "Entra" },
+      { "icon": "monitor", "name": "Windows", "cue": "Windows" },
+      { "icon": "brain-circuit", "name": "OpenAI", "cue": "OpenAI" } ] },
+    { "type": "steps", "say": "So how do you choose? Building a startup? Start with AWS. Your company runs on Microsoft? Pick Azure. Either way, the skills transfer.", "title": "how to choose", "items": [
+      { "text": "Startup or freelance: AWS", "icon": "rocket", "cue": "startup" },
+      { "text": "Microsoft company: Azure", "icon": "building", "cue": "Microsoft" },
+      { "text": "Skills transfer to both", "icon": "repeat", "cue": "skills" } ] },
+    { "type": "outro", "say": "Learn one cloud deeply. The second one takes weeks, not years.", "title": "Learn one cloud deeply", "highlight": "deeply", "sub": "AWS vs Azure", "next": "NEXT: what is Kubernetes?", "visual": "globe", "icon": "cloud" }
+  ]
+}

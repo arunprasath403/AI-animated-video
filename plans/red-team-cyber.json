@@ -1,0 +1,21 @@
+{
+  "title": "What is a Red Team?",
+  "series": "EP.06 / SECURITY",
+  "scenes": [
+    { "type": "hook", "say": "Some companies pay hackers to break into their own systems. That's a red team.", "kicker": "ethical hacking", "title": "Paid to hack you", "highlight": "hack", "icon": "skull" },
+    { "type": "compare", "mode": "neutral", "say": "The red team attacks like real criminals. The blue team defends and tries to catch them.", "left": { "title": "Red team", "icon": "swords", "points": ["attacks", "finds the gaps", "thinks like a criminal"] }, "right": { "title": "Blue team", "icon": "shield", "points": ["defends", "detects", "responds"] }, "cue": "blue" },
+    { "type": "code", "say": "They use the same tools as attackers, like Nmap, to scan for open doors.", "file": "terminal", "lines": ["$ nmap -sV 10.0.0.0/24", "22/tcp   open  ssh", "80/tcp   open  http", "3389/tcp open  ms-wbt-server", "# RDP is open. Way in?"], "cue": "Nmap" },
+    { "type": "flow", "say": "One phishing email opens a laptop, then a file server, then the domain controller.", "group": { "label": "company network", "from": 1 }, "nodes": [
+      { "icon": "mail", "name": "Phishing email", "desc": "one fake link", "cue": "phishing" },
+      { "icon": "laptop", "name": "Employee laptop", "desc": "malware runs", "cue": "laptop" },
+      { "icon": "server", "name": "File server", "desc": "stolen passwords", "cue": "server" },
+      { "icon": "crown", "name": "Domain controller", "desc": "keys to everything", "cue": "controller" } ], "reply": false },
+    { "type": "steps", "say": "Every attack follows a chain. Recon. Get in. Move deeper. Take the data.", "title": "the attack chain", "items": [
+      { "text": "Recon the target", "icon": "search", "cue": "Recon" },
+      { "text": "Get initial access", "icon": "door-open", "cue": "Get" },
+      { "text": "Move laterally", "icon": "network", "cue": "Move" },
+      { "text": "Exfiltrate data", "icon": "database", "cue": "data" } ] },
+    { "type": "stat", "say": "Why bother? The average data breach costs about 4.4 million dollars.", "value": "4.4", "prefix": "$", "suffix": "M", "label": "average cost of a data breach", "icon": "badge-dollar-sign", "cue": "4.4" },
+    { "type": "outro", "say": "A red team breaks in first, so real attackers can't.", "title": "Break in before they do", "highlight": "before", "sub": "that's a red team", "next": "NEXT: what is a blue team?", "visual": "particles", "icon": "shield" }
+  ]
+}

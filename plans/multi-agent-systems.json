@@ -1,0 +1,26 @@
+{
+  "title": "What is a Multi-Agent System?",
+  "series": "EP.07 / AI",
+  "scenes": [
+    { "type": "hook", "say": "One AI agent can do a task. A team of agents can run a whole project.", "kicker": "AI teamwork", "title": "One AI is not enough", "highlight": "enough", "icon": "bot" },
+    { "type": "compare", "mode": "versus", "say": "A single agent juggles everything and loses track. A multi-agent system splits the work between specialists.", "left": { "title": "Single agent", "icon": "user", "points": ["does everything", "long context", "easy to confuse"] }, "right": { "title": "Agent team", "icon": "users", "points": ["one job each", "small context", "works in parallel"] }, "cue": "multi" },
+    { "type": "orbit", "say": "An orchestrator hands out the work. A researcher, a coder, a tester and a writer each own one job.", "center": { "icon": "brain", "name": "Orchestrator" }, "items": [
+      { "icon": "search", "name": "Researcher", "cue": "researcher" },
+      { "icon": "code", "name": "Coder", "cue": "coder" },
+      { "icon": "flask-conical", "name": "Tester", "cue": "tester" },
+      { "icon": "pen-line", "name": "Writer", "cue": "writer" } ] },
+    { "type": "flow", "say": "A request comes in, the plan is split into tasks, agents call their tools, and the results merge into one answer.", "nodes": [
+      { "icon": "message-square", "name": "Request", "desc": "build a feature", "cue": "request" },
+      { "icon": "list-checks", "name": "Plan", "desc": "split into tasks", "cue": "split" },
+      { "icon": "bot", "name": "Agents", "desc": "work in parallel", "cue": "agents" },
+      { "icon": "wrench", "name": "Tools", "desc": "search, code, APIs", "cue": "tools" },
+      { "icon": "git-merge", "name": "Merge", "desc": "one final answer", "cue": "merge" } ], "reply": true },
+    { "type": "code", "say": "In code, each agent is just a model with a role, a prompt and its own tools.", "file": "agents.py", "lines": ["coder = Agent(", "  role=\"coder\",", "  tools=[run_tests, git],", ")", "team = [researcher, coder]", "orchestrator.run(team, task)"], "cue": "role" },
+    { "type": "steps", "say": "The hard parts are sharing memory, passing clean handoffs, checking each other's work, and knowing when to stop.", "title": "what makes it work", "items": [
+      { "text": "Shared memory", "icon": "database", "cue": "memory" },
+      { "text": "Clean handoffs", "icon": "arrow-right-left", "cue": "handoffs" },
+      { "text": "Agents review agents", "icon": "shield-check", "cue": "checking" },
+      { "text": "A clear stop rule", "icon": "circle-stop", "cue": "stop" } ] },
+    { "type": "outro", "say": "Many small specialists, one shared goal. That is a multi-agent system.", "title": "Small agents, big results", "highlight": "big", "sub": "that's a multi-agent system", "next": "NEXT: what is MCP?", "visual": "particles", "icon": "network" }
+  ]
+}

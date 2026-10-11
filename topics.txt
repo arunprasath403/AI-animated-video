@@ -1,0 +1,6 @@
+# One topic per line. Run: c2v batch topics.txt
+AWS vs Azure: which cloud should you learn?
+What is RAG?
+What does a red team do in cyber security?
+How does HTTPS keep you safe?
+What is Kubernetes?

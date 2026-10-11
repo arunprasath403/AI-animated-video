@@ -1,0 +1,13 @@
+{
+  "title": "What is RAG?",
+  "series": "EP.04 / AI",
+  "scenes": [
+    { "type": "hook", "say": "Ask ChatGPT about your company's files, and it just makes things up.", "kicker": "the AI problem", "title": "Why does AI make things up?", "highlight": "up", "icon": "brain" },
+    { "type": "cards", "say": "A model only knows its training data. It has never seen your documents.", "items": [ { "icon": "brain", "kicker": "it knows", "name": "Training", "desc": "the public internet", "cue": "training" }, { "icon": "file-lock", "kicker": "it never saw", "name": "Your docs", "desc": "private and new", "cue": "documents" } ] },
+    { "type": "steps", "say": "RAG fixes this. First, split your documents. Turn each chunk into numbers. Store them in a vector database.", "title": "retrieval augmented generation", "items": [ { "text": "Split documents", "icon": "scissors", "cue": "split" }, { "text": "Embed into vectors", "icon": "move-3d", "cue": "numbers" }, { "text": "Store in a vector DB", "icon": "database", "cue": "Store" } ] },
+    { "type": "flow", "say": "When you ask a question, it finds the closest chunks and hands them to the model with your prompt.", "group": { "label": "RAG pipeline", "from": 1 }, "nodes": [ { "icon": "user", "name": "Your question", "desc": "what is our refund policy?", "cue": "ask" }, { "icon": "search", "name": "Retriever", "desc": "finds closest chunks", "cue": "finds" }, { "icon": "database", "name": "Vector DB", "desc": "top 3 matches", "cue": "chunks" }, { "icon": "brain-circuit", "name": "LLM", "desc": "reads them, then answers", "cue": "model" } ], "reply": true },
+    { "type": "code", "say": "In code, it's just a few lines.", "file": "rag.py", "lines": ["docs = db.search(question, k=3)", "prompt = f\"{docs}\\n\\nQ: {question}\"", "answer = llm(prompt)", "print(answer)"], "cue": "code" },
+    { "type": "chart", "say": "Grounding answers in real documents sharply cuts made up answers.", "label": "wrong answers by week", "values": [9, 8.5, 9.2, 8.8, 4, 3, 2.4, 2, 1.8, 1.6], "line": true, "legend": ["trend", "wrong answers"], "cue": "Grounding" },
+    { "type": "outro", "say": "That's RAG. Give the AI an open book, not a memory test.", "title": "An open book exam for AI", "highlight": "open", "sub": "that's RAG", "next": "NEXT: what are AI agents?", "visual": "globe", "icon": "book-open" }
+  ]
+}
